@@ -13,17 +13,15 @@ class Solution {
         int slow = n;
         int fast = n;
 
-        while(true){
+        while(fast!= 1){
             slow = fun(slow);
             fast = fun(fun(fast));
 
-            if(fast == 1){
-                return true;
-            }
-
-            if(fast == slow){
-                return false;
-            }
+           if(slow == fast && slow != 1){
+            return false;
+           }
         }
+        return true;
+
     }
 }
